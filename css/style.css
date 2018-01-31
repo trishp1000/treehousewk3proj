@@ -1,5 +1,5 @@
 /* ================================= 
-  Base Styles
+  Base Element Styles
 ==================================== */
 
 * {
@@ -14,7 +14,7 @@ body {
 
 p {
 	font-size: .95em;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.8em;
 }
 
 h2,
@@ -32,6 +32,10 @@ a {
 	text-decoration: none;
 }
 
+img {
+	max-width: 100%;
+}
+
 /* ================================= 
   Base Layout Styles
 ==================================== */
@@ -42,12 +46,9 @@ a {
 	font-size: 1.25em;
 }
 
-.name,
-.main-nav li {
+.name a,
+.main-nav a {
 	text-align: center;
-	background: #fff;
-	margin-top: 6px;
-	margin-bottom: 6px;
 }
 
 .main-nav a {
@@ -60,30 +61,23 @@ a {
 	color: #093a58;
 }
 
-.name a,
-.main-nav a {
-	padding: 10px 15px;
-	display: block;
-}
-
 /* ---- Layout Containers ---- */
 
-.container {
-	padding-left: 1em;
-	padding-right: 1em;
-}
-
-.main-header {
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
+.banner {
+	color: #fff;
 	background: #3acec2;
-	margin-bottom: 30px;
 }
 
 .main-footer {
-	text-align: center;
-	padding: 2em 0;
 	background: #d9e4ea;
+	padding: 2em 0;
+	margin-top: 30px;
+}
+
+/* ---- Page Elements ---- */
+
+.logo {
+	width: 190px;
 }
 
 /* ================================= 
@@ -92,29 +86,14 @@ a {
 
 @media (min-width: 769px) {
 
-	.wrap {
-		min-height: calc(100vh - 89px);
-	}
 
-	.container {
-		width: 80%;
-		max-width: 1150px;
-		margin: 0 auto;
-	}
 
-	.name,
-	.main-nav,
-	.main-nav li {
-		display: inline-block;
-	}
+	/* ---- Float clearfix ---- */
 
-	.name {
-		width: 240px;
-		margin-right: 50px;
+	.clearfix::after {
+		content: " ";
+		display: table;
+		clear: both;
 	}
 
 }
-
-
-
-
