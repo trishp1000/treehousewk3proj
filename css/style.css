@@ -1,5 +1,5 @@
 /* ================================= 
-  Base Element Styles
+  Base Styles
 ==================================== */
 
 * {
@@ -14,7 +14,7 @@ body {
 
 p {
 	font-size: .95em;
-	margin-bottom: 1.8em;
+	margin-bottom: 1.5em;
 }
 
 h2,
@@ -32,10 +32,6 @@ a {
 	text-decoration: none;
 }
 
-img {
-	max-width: 100%;
-}
-
 /* ================================= 
   Base Layout Styles
 ==================================== */
@@ -46,52 +42,98 @@ img {
 	font-size: 1.25em;
 }
 
+.name,
+.main-nav li {
+	text-align: center;
+	background: #fff;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
 .name a,
 .main-nav a {
+	padding: 10px 15px;
 	text-align: center;
+	display: block;
 }
 
-.main-nav a {
-	font-size: .95em;
-	color: #3acec2;
-	text-transform: uppercase;
-}
-
-.main-nav a:hover {
-	color: #093a58;
-}
+	.main-nav a {
+		font-size: .95em;
+		color: #3acec2;
+		text-transform: uppercase;
+	}
+	
+	.main-nav a:hover {
+		color: #093a58;
+	}
 
 /* ---- Layout Containers ---- */
 
-.banner {
-	color: #fff;
+.container {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.main-header {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
 	background: #3acec2;
+	margin-bottom: 30px;
 }
 
 .main-footer {
-	background: #d9e4ea;
+	text-align: center;
 	padding: 2em 0;
-	margin-top: 30px;
-}
-
-/* ---- Page Elements ---- */
-
-.logo {
-	width: 190px;
+	background: #d9e4ea;
 }
 
 /* ================================= 
   Media Queries
 ==================================== */
 
-@media (min-width: 769px) {
+@media (min-width: 789px) {
 
+	.wrap {
+		min-height: calc(100vh - 89px);
+	}
 
+	.container {
+		width: 85%;
+		max-width: 1150px;
+		margin: 0 auto;
+	}
 
-	/* ---- Float clearfix ---- */
+	.main-nav {
+		float: right;
+	}
+
+	.name,
+	.main-nav li {
+		float: left;
+	}
+
+	.main-nav li {
+		margin-left: 12px;
+	}
+
+	/* ---- Columns ---- */
+
+	
+	
+	/* ------------- */
+
+	.feat-img {
+		width: 300px;
+		float: left;
+		margin-top: 5px;
+		margin-right: 25px;
+		margin-bottom: 25px;
+		padding: 10px;
+		border: solid 1px #d9e4ea;
+	}
 
 	.clearfix::after {
-		content: " ";
+		content: "";
 		display: table;
 		clear: both;
 	}
