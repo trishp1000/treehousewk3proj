@@ -1,5 +1,5 @@
 /* ================================= 
-  Base Styles
+  Base Element Styles
 ==================================== */
 
 * {
@@ -14,7 +14,7 @@ body {
 
 p {
 	font-size: .95em;
-	margin-bottom: 1.5em;
+	margin-bottom: 1.8em;
 }
 
 h2,
@@ -32,6 +32,10 @@ a {
 	text-decoration: none;
 }
 
+img {
+	max-width: 100%;
+}
+
 /* ================================= 
   Base Layout Styles
 ==================================== */
@@ -42,100 +46,100 @@ a {
 	font-size: 1.25em;
 }
 
-.name,
+/* Links are inline elements, so do not create line breaks in a layout; they appear on the same line as the content and elements beside them.
+An inline element will only accept left/right margins and any padding value. So they do not respond to the text-align property without using the block display.
+Since this is using the mobile-first approach, the css just below results in the links being stacked. See the media-query section below for css for wider displays. */
+
+ /* Added this block, TOP */
+.name, 
 .main-nav li {
 	text-align: center;
 	background: #fff;
 	margin-top: 6px;
 	margin-bottom: 6px;
 }
+/* TOP */
 
 .name a,
 .main-nav a {
-	padding: 10px 15px;
+	padding: 10px 15px; /*Added this line, TOP */
 	text-align: center;
-	display: block;
+	display: block; /*Added this line, TOP */
 }
 
-	.main-nav a {
-		font-size: .95em;
-		color: #3acec2;
-		text-transform: uppercase;
-	}
-	
-	.main-nav a:hover {
-		color: #093a58;
-	}
+.main-nav a {
+	font-size: .95em;
+	color: #3acec2;
+	text-transform: uppercase;
+}
+
+.main-nav a:hover {
+	color: #093a58;
+}
 
 /* ---- Layout Containers ---- */
 
-.container {
-	padding-left: 1em;
-	padding-right: 1em;
-}
-
-.main-header {
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
+.banner {
+	color: #fff;
 	background: #3acec2;
-	margin-bottom: 30px;
+
 }
 
 .main-footer {
-	text-align: center;
-	padding: 2em 0;
 	background: #d9e4ea;
+	padding: 2em 0;
+	margin-top: 30px;
+}
+
+/* ---- Page Elements ---- */
+
+.logo {
+	width: 190px;
 }
 
 /* ================================= 
-  Media Queries
+  Added all media query logic, except
+  .clearfix, TOP
 ==================================== */
 
-@media (min-width: 789px) {
+/* tablet and laptop */
+@media (min-width: 769px) {
 
-	.wrap {
-		min-height: calc(100vh - 89px);
-	}
+/* Limit width of wider screens */
+.containerh {
+	width: 80%;
+	max-width: 1150px;
+	margin: 0 auto;
+}
 
-	.container {
-		width: 85%;
-		max-width: 1150px;
-		margin: 0 auto;
-	}
+/* Heading should be on one line on tablets, laptops and wider. */
 
-	.main-nav {
-		float: right;
-	}
+.main-nav {
+ 	float: right;
+}
 
-	.name,
-	.main-nav li {
-		float: left;
-	}
+.name, 
+.main-nav li {
+	float: left;
+}
 
-	.main-nav li {
-		margin-left: 12px;
-	}
+.main-nav li {
+	margin-left: 12px;
+}
 
-	/* ---- Columns ---- */
 
-	
-	
-	/* ------------- */
 
-	.feat-img {
-		width: 300px;
-		float: left;
-		margin-top: 5px;
-		margin-right: 25px;
-		margin-bottom: 25px;
-		padding: 10px;
-		border: solid 1px #d9e4ea;
-	}
+	/* ---- Float clearfix ---- */
 
 	.clearfix::after {
-		content: "";
+		content: " ";
 		display: table;
 		clear: both;
 	}
+
+}
+
+/* laptop */
+@media (min-width: 1025px) {
 
 }
