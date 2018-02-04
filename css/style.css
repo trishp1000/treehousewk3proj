@@ -78,11 +78,21 @@ Since this is using the mobile-first approach, the css just below results in the
 }
 
 /* ---- Layout Containers ---- */
+ 
+/* Added this block, TOP */
+.container {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+/* TOP */
 
 .banner {
 	color: #fff;
 	background: #3acec2;
-
+	padding-top: 1.5em; /*Added this line, TOP */
+	padding-bottom: 1.5em; /*Added this line, TOP */
+	text-align: center; /*Added this line, TOP */
+	display: block; /*Added this line, TOP */
 }
 
 .main-footer {
@@ -106,14 +116,13 @@ Since this is using the mobile-first approach, the css just below results in the
 @media (min-width: 769px) {
 
 /* Limit width of wider screens */
-.containerh {
+.container {
 	width: 80%;
 	max-width: 1150px;
 	margin: 0 auto;
 }
 
 /* Heading should be on one line on tablets, laptops and wider. */
-
 .main-nav {
  	float: right;
 }
@@ -127,7 +136,27 @@ Since this is using the mobile-first approach, the css just below results in the
 	margin-left: 12px;
 }
 
+/* columns */
+.col primary {
+	float: right;
+}
 
+.col,
+.secondary,
+.tertiary {
+	float: left;
+	padding-right: 1em;
+	width: 50%;
+}
+
+.wrap {
+	min-height: calc(100vh - 89px);
+}
+
+.main-footer {
+	display: block;
+	text-align: center;
+}
 
 	/* ---- Float clearfix ---- */
 
@@ -142,4 +171,34 @@ Since this is using the mobile-first approach, the css just below results in the
 /* laptop */
 @media (min-width: 1025px) {
 
+/* columns */
+.col {
+	float: left;
+	padding-right: 1em;
 }
+
+.col + .col {
+	padding-left: 1em;
+}
+
+.col:last-child {
+	padding-right: 0;
+}
+
+.primary {
+	width: 44%;
+}
+
+.secondary,
+.tertiary {
+	width: 28%;	
+}
+
+}
+
+
+
+
+
+
+
