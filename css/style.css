@@ -44,13 +44,13 @@ img {
 
 .name {
 	font-size: 1.25em;
+	margin: 0;
 }
 
 /* Links are inline elements, so do not create line breaks in a layout; they appear on the same line as the content and elements beside them.
 An inline element will only accept left/right margins and any padding value. So they do not respond to the text-align property without using the block display.
 Since this is using the mobile-first approach, the css just below results in the links being stacked. See the media-query section below for css for wider displays. */
 
- /* Added this block, TOP */
 .name, 
 .main-nav li {
 	text-align: center;
@@ -62,9 +62,9 @@ Since this is using the mobile-first approach, the css just below results in the
 
 .name a,
 .main-nav a {
-	padding: 10px 15px; /*Added this line, TOP */
+	padding: 10px 15px;
 	text-align: center;
-	display: block; /*Added this line, TOP */
+	display: block;
 }
 
 .main-nav a {
@@ -79,20 +79,19 @@ Since this is using the mobile-first approach, the css just below results in the
 
 /* ---- Layout Containers ---- */
  
-/* Added this block, TOP */
 .container {
 	padding-left: 1em;
 	padding-right: 1em;
 }
-/* TOP */
 
 .banner {
 	color: #fff;
 	background: #3acec2;
-	padding-top: 1.5em; /*Added this line, TOP */
-	padding-bottom: 1.5em; /*Added this line, TOP */
-	text-align: center; /*Added this line, TOP */
-	display: block; /*Added this line, TOP */
+	padding-top: 1.5em;
+	padding-bottom: 1.5em; 
+	margin-bottom: 60px;
+	text-align: center;
+	display: block;
 }
 
 .main-footer {
@@ -101,10 +100,20 @@ Since this is using the mobile-first approach, the css just below results in the
 	margin-top: 30px;
 }
 
+.main-footer {
+	display: block;
+	text-align: center;
+}
+
+
 /* ---- Page Elements ---- */
 
 .logo {
 	width: 190px;
+}
+
+.headline {
+	margin-bottom: 0;
 }
 
 /* ================================= 
@@ -117,45 +126,40 @@ Since this is using the mobile-first approach, the css just below results in the
 
 /* Limit width of wider screens */
 .container {
-	width: 80%;
-	max-width: 1150px;
+	width: 90%;
 	margin: 0 auto;
 }
 
 /* Heading should be on one line on tablets, laptops and wider. */
-.main-nav {
- 	float: right;
-}
 
-.name, 
-.main-nav li {
+.name,
+.col {
 	float: left;
-}
+} 
 
-.main-nav li {
-	margin-left: 12px;
-}
-
-/* columns */
-.col primary {
+.main-nav {
 	float: right;
 }
 
-.col,
-.secondary,
-.tertiary {
-	float: left;
-	padding-right: 1em;
+.main-nav li {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+.tagline {
+	font-size: 1.2em;
+}
+
+/* columns */
+
+.primary,
+.secondary {
 	width: 50%;
+	padding-right: 1em;
 }
 
 .wrap {
 	min-height: calc(100vh - 89px);
-}
-
-.main-footer {
-	display: block;
-	text-align: center;
 }
 
 	/* ---- Float clearfix ---- */
@@ -171,11 +175,20 @@ Since this is using the mobile-first approach, the css just below results in the
 /* laptop */
 @media (min-width: 1025px) {
 
+.container {
+	width: 80%;
+	max-width: 1150px;
+	margin: 0 auto;
+}
+
 /* columns */
+
+/* don't need this rule; use same float as media query for medium screens.
 .col {
 	float: left;
 	padding-right: 1em;
 }
+TOP */
 
 .col + .col {
 	padding-left: 1em;
@@ -186,12 +199,12 @@ Since this is using the mobile-first approach, the css just below results in the
 }
 
 .primary {
-	width: 44%;
+	width: 42%;
 }
 
 .secondary,
 .tertiary {
-	width: 28%;	
+	width: 29%;	
 }
 
 }
